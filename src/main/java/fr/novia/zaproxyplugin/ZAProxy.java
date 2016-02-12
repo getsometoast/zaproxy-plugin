@@ -769,17 +769,17 @@ public class ZAProxy extends AbstractDescribableImpl<ZAProxy> implements Seriali
 		} else
 			listener.getLogger().println("zapProxyPort = " + zapProxyPort);
 
-		if(jiraBaseURL.equals(null)) {
+		if(jiraBaseURL != null && jiraBaseURL.isEmpty()) {
 			throw new IllegalArgumentException("Jira Base URL not Found");
 		} else
 			listener.getLogger().println("jiraBaseURL = " + jiraBaseURL);
 
-		if(jiraUserName.equals(null)) {
+		if(jiraUserName != null && jiraUserName.isEmpty()) {
 			throw new IllegalArgumentException("Jira User name not Found");
 		} else
 			listener.getLogger().println("jiraUserName = " + jiraUserName);
 
-		if(jiraPassword.equals(null)) {
+		if(jiraPassword != null && jiraPassword.isEmpty()) {
 			throw new IllegalArgumentException("Jira password not Found");
 		} else {
 			String pass = "";
@@ -788,7 +788,6 @@ public class ZAProxy extends AbstractDescribableImpl<ZAProxy> implements Seriali
 			}
 			listener.getLogger().println("jiraUserName = " + pass);
 		}
-		
 	}
 		
 	/**
